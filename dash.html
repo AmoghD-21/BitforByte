@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EatFit Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">EatFit</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="bowls.html" class="nav-link">Meals</a>
+                <a href="plans.html" class="nav-link">Plans</a>
+                <a href="dash.html" class="nav-link">Dashboard</a>
+                <a href="calorie-tracker.html" class="nav-link">BiteSync</a>
+                <a href="/register" class="nav-link cta">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Namaste, Priya</h1>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Schedule Section -->
+            <section class="schedule-section">
+                <div class="schedule-header">
+                    <h3>Today's Meal Plan</h3>
+                    <button class="edit-btn">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
+                </div>
+                <div class="calendar-nav">
+                    <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="date-list">
+                        <div class="date-item">
+                            <span class="day">21</span>
+                            <span class="weekday">Sun</span>
+                        </div>
+                        <div class="date-item active">
+                            <span class="day">22</span>
+                            <span class="weekday">Mon</span>
+                        </div>
+                        <div class="date-item">
+                            <span class="day">23</span>
+                            <span class="weekday">Tue</span>
+                        </div>
+                        <div class="date-item">
+                            <span class="day">24</span>
+                            <span class="weekday">Wed</span>
+                        </div>
+                        <div class="date-item">
+                            <span class="day">25</span>
+                            <span class="weekday">Thu</span>
+                        </div>
+                    </div>
+                    <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <div class="schedule-list">
+                    <div class="schedule-item">
+                        <div class="time">07:00-07:30 AM</div>
+                        <div class="activity">
+                            <span class="activity-type">Morning Tea</span>
+                            <span class="meal-name">Masala Chai</span>
+                            <span class="meal-info">60kcal • 10min</span>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time">8:30 - 9:00 AM</div>
+                        <div class="activity">
+                            <span class="activity-type breakfast">Breakfast</span>
+                            <span class="meal-name">Masala Dosa with Sambar</span>
+                            <span class="meal-info">320kcal • 25min</span>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time">11:00 AM</div>
+                        <div class="activity">
+                            <span class="activity-type">Hydration</span>
+                            <span class="meal-name">Nimbu Pani</span>
+                            <span class="meal-info">45kcal • 5min</span>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time">1:00 - 1:45 PM</div>
+                        <div class="activity">
+                            <span class="activity-type lunch">Lunch</span>
+                            <span class="meal-name">Dal Tadka, Brown Rice, Mixed Veg Sabzi</span>
+                            <span class="meal-info">450kcal • 35min</span>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time">4:30 PM</div>
+                        <div class="activity">
+                            <span class="activity-type">Evening Snack</span>
+                            <span class="meal-name">Sprouts Bhel</span>
+                            <span class="meal-info">150kcal • 15min</span>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time">7:30 - 8:00 PM</div>
+                        <div class="activity">
+                            <span class="activity-type dinner">Dinner</span>
+                            <span class="meal-name">Paneer Tikka with Roti</span>
+                            <span class="meal-info">380kcal • 30min</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="report-card">
+                    <h3>Health Report</h3>
+                    <p class="subtitle">Weekly Progress</p>
+                    <div class="stats-grid">
+                        <div class="stat-item water">
+                            <div class="stat-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Water</h4>
+                                <div class="stat-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 83%"></div>
+                                    </div>
+                                    <span>2.5L</span>
+                                </div>
+                                <span class="goal">Target: 3L</span>
+                            </div>
+                        </div>
+                        <div class="stat-item weight">
+                            <div class="stat-icon">
+                                <i class="fas fa-weight"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Weight</h4>
+                                <div class="stat-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 75%"></div>
+                                    </div>
+                                    <span>65kg</span>
+                                </div>
+                                <span class="goal">Target: 60kg</span>
+                            </div>
+                        </div>
+                        <div class="stat-item calories">
+                            <div class="stat-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Calories</h4>
+                                <div class="stat-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 65%"></div>
+                                    </div>
+                                    <span>1250kcal</span>
+                                </div>
+                                <span class="goal">Left: 750kcal</span>
+                            </div>
+                        </div>
+                        <div class="stat-item protein">
+                            <div class="stat-icon">
+                                <i class="fas fa-drumstick-bite"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Protein</h4>
+                                <div class="stat-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 70%"></div>
+                                    </div>
+                                    <span>42g</span>
+                                </div>
+                                <span class="goal">Target: 60g</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nutrition Breakdown -->
+                <div class="nutrition-chart">
+                    <h3>Nutrition Breakdown</h3>
+                    <div class="charts-grid">
+                        <div class="chart-item">
+                            <canvas id="macroChart"></canvas>
+                            <h4>Macronutrients</h4>
+                        </div>
+                        <div class="chart-item">
+                            <canvas id="nutrientChart"></canvas>
+                            <h4>Daily Nutrients</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Activity -->
+                <div class="activity-chart">
+                    <h3>Weekly Activity</h3>
+                    <div class="chart-container">
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Previous Orders Section -->
+            <section class="orders-section">
+                <div class="orders-header">
+                    <h3>Previous Orders</h3>
+                    <div class="orders-filter">
+                        <select id="orderTimeFilter">
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                            <option value="all">All Time</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="orders-list">
+                    <div class="order-item">
+                        <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc" alt="Special Thali">
+                        <div class="order-details">
+                            <h4>Special Thali</h4>
+                            <div class="order-stats">
+                                <span><i class="fas fa-fire"></i> 850 kcal</span>
+                                <span><i class="fas fa-clock"></i> Yesterday</span>
+                            </div>
+                            <div class="order-items">
+                                <span>Dal Makhani</span>
+                                <span>Paneer Butter Masala</span>
+                                <span>+3 more</span>
+                            </div>
+                        </div>
+                        <button class="reorder-btn">Reorder</button>
+                    </div>
+                    <div class="order-item">
+                        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe" alt="Protein Bowl">
+                        <div class="order-details">
+                            <h4>Protein Bowl</h4>
+                            <div class="order-stats">
+                                <span><i class="fas fa-fire"></i> 420 kcal</span>
+                                <span><i class="fas fa-clock"></i> 2 days ago</span>
+                            </div>
+                            <div class="order-items">
+                                <span>Quinoa</span>
+                                <span>Chickpeas</span>
+                                <span>+2 more</span>
+                            </div>
+                        </div>
+                        <button class="reorder-btn">Reorder</button>
+                    </div>
+                    <div class="order-item">
+                        <img src="https://images.unsplash.com/photo-1613844237701-8f3664fc2eff" alt="South Indian Breakfast">
+                        <div class="order-details">
+                            <h4>South Indian Breakfast</h4>
+                            <div class="order-stats">
+                                <span><i class="fas fa-fire"></i> 550 kcal</span>
+                                <span><i class="fas fa-clock"></i> 3 days ago</span>
+                            </div>
+                            <div class="order-items">
+                                <span>Masala Dosa</span>
+                                <span>Idli Sambar</span>
+                                <span>+2 more</span>
+                            </div>
+                        </div>
+                        <button class="reorder-btn">Reorder</button>
+                    </div>
+                </div>
+                <div class="orders-summary">
+                    <div class="summary-item">
+                        <span class="summary-label">Total Orders</span>
+                        <span class="summary-value">28</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Avg. Calories/Order</span>
+                        <span class="summary-value">620 kcal</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Most Ordered</span>
+                        <span class="summary-value">Thali</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Shopping List -->
+            <section class="shopping-section">
+                <div class="shopping-header">
+                    <h3>Grocery List</h3>
+                    <button class="more-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <div class="item-check">
+                            <input type="checkbox" id="item1" checked>
+                            <label for="item1">
+                                <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716" alt="Paneer">
+                                <span>Fresh Paneer</span>
+                            </label>
+                        </div>
+                        <span class="quantity">250g</span>
+                    </div>
+                    <div class="shopping-item">
+                        <div class="item-check">
+                            <input type="checkbox" id="item2" checked>
+                            <label for="item2">
+                                <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5" alt="Masoor Dal">
+                                <span>Masoor Dal</span>
+                            </label>
+                        </div>
+                        <span class="quantity">500g</span>
+                    </div>
+                    <div class="shopping-item">
+                        <div class="item-check">
+                            <input type="checkbox" id="item3">
+                            <label for="item3">
+                                <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d" alt="Brown Rice">
+                                <span>Brown Rice</span>
+                            </label>
+                        </div>
+                        <span class="quantity ai-suggested">AI Suggested</span>
+                        <span class="quantity">1kg</span>
+                    </div>
+                    <div class="shopping-item">
+                        <div class="item-check">
+                            <input type="checkbox" id="item4">
+                            <label for="item4">
+                                <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5" alt="Mixed Sprouts">
+                                <span>Mixed Sprouts</span>
+                            </label>
+                        </div>
+                        <span class="quantity">200g</span>
+                    </div>
+                    <div class="shopping-item">
+                        <div class="item-check">
+                            <input type="checkbox" id="item5">
+                            <label for="item5">
+                                <img src="https://images.unsplash.com/photo-1618512496248-a01f6a18a5af" alt="Green Vegetables">
+                                <span>Green Vegetables</span>
+                            </label>
+                        </div>
+                        <span class="quantity">500g</span>
+                    </div>
+                </div>
+                <button class="shop-now-btn">Order Now</button>
+            </section>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html> 

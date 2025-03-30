@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EatFit - Browse Healthy Meals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>EatFit</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="bowls.html" class="nav-link">Meals</a>
+                <a href="plans.html" class="nav-link">Plans</a>
+                <a href="dash.html" class="nav-link">Dashboard</a>
+                <a href="calorie-tracker.html" class="nav-link">BiteSync</a>
+                <a href="/register" class="nav-link cta">Register</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="#"><i class="fas fa-comments"></i> Forum</a>
+            <div class="user-menu">
+                <img src="https://via.placeholder.com/32" alt="User" class="user-avatar">
+                <span>Jessica</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="search-section">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search by recipes...">
+                    <button class="filter-toggle"><i class="fas fa-sliders-h"></i></button>
+                </div>
+            </div>
+
+            <div class="filters-section">
+                <div class="filter-group">
+                    <h3><i class="fas fa-utensils"></i> Meal Type</h3>
+                    <label><input type="checkbox" value="breakfast"> Breakfast</label>
+                    <label><input type="checkbox" value="lunch"> Lunch</label>
+                    <label><input type="checkbox" value="dinner"> Dinner</label>
+                    <label><input type="checkbox" value="snacks"> Snacks</label>
+                    <label><input type="checkbox" value="desserts"> Desserts</label>
+                    <label><input type="checkbox" value="drinks"> Drinks</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3><i class="fas fa-leaf"></i> Dietary Preferences</h3>
+                    <label><input type="checkbox" value="vegetarian"> Vegetarian</label>
+                    <label><input type="checkbox" value="low-carb"> Low-Carb</label>
+                    <label><input type="checkbox" value="gluten-free"> Gluten-Free</label>
+                    <label><input type="checkbox" value="keto"> Keto</label>
+                    <label><input type="checkbox" value="dairy-free"> Dairy-Free</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3><i class="fas fa-fire"></i> Calories</h3>
+                    <div class="range-slider">
+                        <input type="range" id="caloriesRange" min="0" max="1000" value="500" class="slider">
+                        <span id="caloriesValue">500 calories</span>
+                    </div>
+                </div>
+
+                <button class="apply-filters-btn" id="applyFilters">
+                    <i class="fas fa-check"></i> Apply Filters
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="meals-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-star"></i> Browse Meals</h2>
+                    <div class="section-nav">
+                        <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="meals-grid" id="mealsGrid">
+                    <!-- Meal cards will be dynamically inserted here -->
+                </div>
+            </section>
+        </main>
+
+        <div class="cart-preview" id="cartPreview">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+                <span class="cart-count">0 items</span>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script src="bowls.js"></script>
+</body>
+</html> 

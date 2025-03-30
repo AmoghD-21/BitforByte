@@ -1,0 +1,836 @@
+:root {
+    --primary-color: #6C5CE7;
+    --secondary-color: #5A4ED1;
+    --background-color: #F8F9FA;
+    --text-color: #333;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    background-color: white;
+    box-shadow: var(--card-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+    background-color: rgba(108, 92, 231, 0.1);
+}
+
+.nav-links a i {
+    font-size: 1.1rem;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* Main Container */
+.main-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    min-height: calc(100vh - 64px);
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    height: fit-content;
+    position: sticky;
+    top: calc(64px + 2rem);
+}
+
+.search-section {
+    margin-bottom: 1.5rem;
+}
+
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.filter-toggle {
+    padding: 0.8rem;
+    background-color: var(--background-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Filters Section */
+.filters-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.filter-group h3 {
+    font-size: 1rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-group h3 i {
+    color: var(--primary-color);
+}
+
+.filter-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.3rem 0;
+    transition: color 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.apply-filters-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.apply-filters-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Section Header */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.section-header h2 i {
+    color: var(--primary-color);
+}
+
+.section-nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Meals Grid */
+.meals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Meal Cards */
+.meal-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.meal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.meal-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.meal-content {
+    padding: 1.5rem;
+}
+
+.meal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+}
+
+.meal-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-right: 1rem;
+}
+
+.meal-meta {
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.meal-meta i {
+    color: var(--primary-color);
+}
+
+.meal-description {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.meal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meal-info {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.calories, .difficulty {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.calories i {
+    color: #ff6b6b;
+}
+
+.difficulty i {
+    color: var(--primary-color);
+}
+
+.difficulty.easy { color: #40c057; }
+.difficulty.medium { color: #fd7e14; }
+.difficulty.hard { color: #fa5252; }
+
+.meal-tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tag {
+    padding: 0.3rem 0.8rem;
+    background-color: var(--background-color);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .main-container {
+        grid-template-columns: 250px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .meals-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Quantity Controls */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--background-color);
+    padding: 0.3rem;
+    border-radius: 20px;
+}
+
+.quantity-control button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.quantity-control button:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: white;
+}
+
+.quantity-control button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.quantity-display {
+    min-width: 24px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.meal-price {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* Order Summary Popup */
+.order-summary-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.close-popup {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.close-popup:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.add-to-cart-text {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.order-summary-content {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.order-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.order-header h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.order-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--background-color);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.order-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.order-details {
+    flex: 1;
+}
+
+.order-details h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.quantity-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-summary {
+    margin-top: 1.5rem;
+}
+
+.summary-details {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+
+.summary-details p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+.summary-details .total {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.payment-options {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.proceed-payment {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1rem;
+    transition: background 0.3s ease;
+}
+
+.proceed-payment:hover {
+    background: var(--secondary-color);
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.payment-methods img {
+    height: 24px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.payment-methods img:hover {
+    opacity: 1;
+}
+
+/* Meal Details Page */
+.back-button {
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: var(--primary-color);
+}
+
+.meal-details-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.meal-details-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.meal-details-tags {
+    margin-bottom: 1rem;
+}
+
+.meal-details-title {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.meal-details-description {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.meal-details-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.meal-details-image-section {
+    position: sticky;
+    top: 100px;
+}
+
+.meal-details-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--card-shadow);
+}
+
+.meal-quick-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.info-item span:first-of-type {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.info-item span:last-child {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.meal-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+}
+
+.meal-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.meal-section h2 i {
+    color: var(--primary-color);
+}
+
+.ingredients-list, .instructions-list {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+.ingredients-list li, .instructions-list li {
+    margin-bottom: 0.8rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.instructions-list li {
+    padding-left: 1rem;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.nutrition-item {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nutrition-item .label {
+    color: #666;
+}
+
+.nutrition-item .value {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.vitamins-minerals {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.vitamins-minerals h4 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.vitamins-minerals ul {
+    list-style: none;
+    padding: 0;
+}
+
+.vitamins-minerals li {
+    color: #666;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.vitamins-minerals li::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* View Details Button */
+.view-details-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.view-details-btn:hover {
+    background: var(--secondary-color);
+}
+
+@media (max-width: 992px) {
+    .meal-details-content {
+        grid-template-columns: 1fr;
+    }
+
+    .meal-details-image-section {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .meal-quick-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nutrition-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vitamins-minerals {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+} 

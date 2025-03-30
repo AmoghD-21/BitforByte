@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Details - EatFit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="bowls.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Browse
+            </a>
+        </div>
+    </nav>
+
+    <div class="meal-details-container">
+        <div class="meal-details-header">
+            <div class="meal-details-tags"></div>
+            <h1 class="meal-details-title"></h1>
+            <p class="meal-details-description"></p>
+        </div>
+
+        <div class="meal-details-content">
+            <div class="meal-details-image-section">
+                <img class="meal-details-image" alt="Meal Image">
+                <div class="meal-quick-info">
+                    <div class="info-item">
+                        <i class="fas fa-fire"></i>
+                        <span class="calories-value"></span>
+                        <span>Calories</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-dumbbell"></i>
+                        <span class="protein-value"></span>
+                        <span>Protein</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-bread-slice"></i>
+                        <span class="carbs-value"></span>
+                        <span>Carbs</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-oil-can"></i>
+                        <span class="fat-value"></span>
+                        <span>Fat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meal-details-info">
+                <div class="meal-section">
+                    <h2><i class="fas fa-list-ul"></i> Ingredients</h2>
+                    <ul class="ingredients-list"></ul>
+                </div>
+
+                <div class="meal-section">
+                    <h2><i class="fas fa-utensils"></i> Instructions</h2>
+                    <ol class="instructions-list"></ol>
+                </div>
+
+                <div class="meal-section">
+                    <h2><i class="fas fa-chart-pie"></i> Nutrition Facts</h2>
+                    <div class="nutrition-facts">
+                        <div class="nutrition-chart">
+                            <!-- Chart will be added via JavaScript -->
+                        </div>
+                        <div class="nutrition-details">
+                            <!-- Additional nutrition details will be added via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="meal-details.js"></script>
+</body>
+</html> 
